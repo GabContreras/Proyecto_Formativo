@@ -1,7 +1,12 @@
 CREATE TABLE Enfermera (
-    usuario INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    usuario varchar2(50) ,
     contrasena VARCHAR2(250)
 );
+
+insert into Enfermera (usuario,contrasena) values ('elpepe', 'etesech')
+
+select * from enfermera 
 
 CREATE TABLE Habitacion (
     numero_habitacion INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY
@@ -15,7 +20,9 @@ CREATE TABLE Paciente (
     enfermedad VARCHAR2(100),
     fecha_de_ingreso VARCHAR2(50)
 );
+insert into Paciente (nombre, apellido, edad, enfermedad, fecha_de_ingreso ) values ('Pepe', 'sech', '12 años','Rinofaringitisqueseyo','12/06/2024' )
 
+select * from Paciente;
 CREATE TABLE Habitación_paciente (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     numero_cama INT,

@@ -10,6 +10,7 @@ import gabriel.contreras.proyectoformativo.informacion_paciente
 import android.content.Intent
 import android.app.AlertDialog
 import android.widget.EditText
+import gabriel.contreras.proyectoformativo.editar_paciente
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -96,9 +97,16 @@ class AdaptadorPaciente(var Datos: List<Paciente>) : RecyclerView.Adapter<ViewHo
             //Creamos un Alert Dialog
             val context = holder.itemView.context
 
-            val builder = androidx.appcompat.app.AlertDialog.Builder(context)
-            builder.setTitle("Actualizar")
-            builder.setMessage("¿Desea actualizar los datos del paciente?")
+            val pantallaDetalle = Intent(context, editar_paciente::class.java)
+            //enviar a la otra pantalla todos mis valores
+            pantallaDetalle.putExtra("id_paciente", Paciente.id_paciente)
+            pantallaDetalle.putExtra("nombre", Paciente.nombre)
+            pantallaDetalle.putExtra("apellido", Paciente.apellido)
+            pantallaDetalle.putExtra("edad", Paciente.edad)
+            pantallaDetalle.putExtra("enfermedad", Paciente.enfermedad)
+            pantallaDetalle.putExtra("fecha_de_ingreso", Paciente.fecha_de_ingreso)
+            context.startActivity(pantallaDetalle)
+
 
         }
 

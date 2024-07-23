@@ -29,29 +29,39 @@ class registro_usuario : AppCompatActivity() {
         val txtContrasenaRegistrarse = findViewById<EditText>(R.id.txtContrasenaRegistro)
         val btnRegistrarse = findViewById<ImageView>(R.id.btnCrearCuenta)
 
-
-
         btnRegistrarse.setOnClickListener {
-            GlobalScope.launch(Dispatchers.IO) {
+            val usuario = txtUsuarioRegistrarse.text.toString()
+            val contrasena = txtContrasenaRegistrarse.text.toString()
 
-                val objConexion = ClaseConexion().cadenaConexion()
+            if (usuario.isEmpty() || contrasena.isEmpty()) {
+                Toast.makeText(
+                    this@registro_usuario,
+                    "Por favor, llenar los espacios obligatorios",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                GlobalScope.launch(Dispatchers.IO) {
+                    try {
+                        val objConexion = ClaseConexion().cadenaConexion()
 
+                            val crearUsuario = objConexion?.prepareStatement("INSERT INTO Enfermera(usuario, contrasena) VALUES (?, ?) ")!!
+                            crearUsuario.setString(1, usuario)
+                            crearUsuario.setString(2, contrasena)
+                            crearUsuario.executeUpdate()
+                            withContext(Dispatchers.Main) {
+                                Toast.makeText(this@registro_usuario, "Usuario creado, regresa a la pantalla anterior para iniciar sesión.", Toast.LENGTH_LONG).show()
+                                txtUsuarioRegistrarse.setText("")
+                                txtContrasenaRegistrarse.setText("")
+                            }
 
-                val crearUsuario =
-                    objConexion?.prepareStatement("INSERT INTO Enfermera(usuario, contrasena) VALUES (?, ?) ")!!
-                crearUsuario.setString(2, txtUsuarioRegistrarse.text.toString())
-                crearUsuario.setString(3, txtContrasenaRegistrarse.text.toString())
-                crearUsuario.executeUpdate()
-                withContext(Dispatchers.Main) {
-
-                    Toast.makeText(this@registro_usuario, "Usuario creado, Regresa a la pantalla anterior para poder iniciar sesión en el sistema", Toast.LENGTH_LONG).show()
-                    txtUsuarioRegistrarse.setText("")
-                    txtContrasenaRegistrarse.setText("")
+                    } catch (e: Exception) {
+                        withContext(Dispatchers.Main) {
+                            Toast.makeText(this@registro_usuario, "Ocurrió un error al crear la cuenta. Por favor, intente nuevamente.", Toast.LENGTH_SHORT).show()
+                            println("Error: ${e.message}")
+                        }
+                    }
                 }
             }
-
         }
-
-
     }
 }

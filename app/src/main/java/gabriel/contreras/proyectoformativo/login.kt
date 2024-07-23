@@ -6,12 +6,14 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import kotlinx.coroutines.launch
-
+import kotlinx.coroutines.withContext
 import androidx.core.view.WindowInsetsCompat
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 
@@ -31,28 +33,53 @@ class login : AppCompatActivity() {
         val btnIngresar = findViewById<ImageView>(R.id.btnIngresar)
         val txtRegistrare = findViewById<TextView>(R.id.btnRegistrarse)
 
-
-        //Botones para ingresar al sistema
-
         btnIngresar.setOnClickListener {
-            val pantallaPrincipal = Intent(this, lista_pacientes::class.java)
+            val usuario = txtUsuario.text.toString().trim()
+            val contrasena = txtContrasena.text.toString().trim()
 
-            GlobalScope.launch(Dispatchers.IO) {
-                val objConexion = ClaseConexion().cadenaConexion()
+            // Validación de campos vacíos
+            if (usuario.isEmpty() || contrasena.isEmpty()) {
+                Toast.makeText(
+                    this, "Por favor, ingrese su usuario y contraseña.", Toast.LENGTH_SHORT
+                ).show()
+                return@setOnClickListener
+            } else {
+                CoroutineScope(Dispatchers.IO).launch {
+                    try {
+                        val objConexion = ClaseConexion().cadenaConexion()
 
+                        val comprobacionUsuario =
+                            objConexion?.prepareStatement("SELECT * FROM Enfermera WHERE usuario = ? AND contrasena = ?")!!
+                        comprobacionUsuario.setString(1, usuario)
+                        comprobacionUsuario.setString(2, contrasena)
+                        val resultado = comprobacionUsuario.executeQuery()
 
-                val comprobacionUsuario = objConexion?.prepareStatement("SELECT * FROM TB_USUARIO WHERE NOMBRE_DE_USUARIO = ? AND CONTRASENA = ?")!!
-                comprobacionUsuario.setString(1, txtUsuario.text.toString())
-                comprobacionUsuario.setString(2, txtContrasena.text.toString())
-                val resultado = comprobacionUsuario.executeQuery()
+                        if (resultado.next()) {
+                            withContext(Dispatchers.Main) {
+                                val pantallaPrincipal =
+                                    Intent(this@login, lista_pacientes::class.java)
+                                startActivity(pantallaPrincipal)
+                            }
+                        } else {
+                            withContext(Dispatchers.Main) {
+                                Toast.makeText(
+                                    this@login,
+                                    "Usuario no encontrado, verifique las credenciales.",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        }
+                    } catch (e: Exception) {
+                        withContext(Dispatchers.Main) {
+                            Toast.makeText(this@login, "Error: ${e.message}", Toast.LENGTH_SHORT)
+                                .show()
+                        }
+                    }
 
-                if (resultado.next()) {
-                    startActivity(pantallaPrincipal)
-                } else {
-                    println("Usuario no encontrado, verifique las credenciales")
                 }
             }
         }
+
         txtRegistrare.setOnClickListener {
             //Cambio de pantalla para poder registrarse
             val pantallaRegistrarse = Intent(this, registro_usuario::class.java)
