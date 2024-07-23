@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/white"
     tools:context=".login">
 
     <ImageView
@@ -35,7 +36,7 @@
         app:layout_constraintVertical_bias="0.597" />
 
     <ImageButton
-        android:id="@+id/btnRegistrarUsuario"
+        android:id="@+id/btnIngresar"
         android:layout_width="231dp"
         android:layout_height="65dp"
         android:backgroundTint="#F8F7F7"
@@ -70,7 +71,7 @@
         android:text="¿No tienes una cuenta? ¡Crea una!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.995"
+        app:layout_constraintHorizontal_bias="0.665"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.873" />
@@ -110,7 +111,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.325"
-        app:srcCompat="@drawable/login" />
+        app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/textView"

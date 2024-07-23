@@ -34,19 +34,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.597" />
 
-    <ImageButton
-        android:id="@+id/btnRegistrarUsuario"
-        android:layout_width="231dp"
-        android:layout_height="65dp"
-        android:backgroundTint="#F8F7F7"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.841"
-        app:srcCompat="@drawable/registrar" />
-
     <EditText
         android:id="@+id/txtContrasenaRegistro"
         android:layout_width="318dp"
@@ -68,12 +55,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="¿No tienes una cuenta? ¡Crea una!"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.995"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.873" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
@@ -110,18 +95,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.325"
-        app:srcCompat="@drawable/login" />
+        app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="¡Bienvenido de nuevo! Accede a tu cuenta para continuar"
+        android:layout_width="390dp"
+        android:layout_height="38dp"
+        android:text="Crea un nobre de usuario y una contraseña para poder utilizar el sistema"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.724"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btnCrearCuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgLineas2"
+        app:layout_constraintVertical_bias="0.868"
+        app:srcCompat="@drawable/registrar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
