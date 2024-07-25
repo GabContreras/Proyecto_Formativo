@@ -75,10 +75,10 @@ class login : AppCompatActivity() {
                                 .show()
                         }
                     }
-
                 }
             }
         }
+
 
         txtRegistrare.setOnClickListener {
             //Cambio de pantalla para poder registrarse

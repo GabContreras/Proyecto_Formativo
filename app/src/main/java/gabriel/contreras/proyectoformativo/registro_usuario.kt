@@ -12,6 +12,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import Modelo.ClaseConexion
+import android.content.Intent
 import android.widget.Toast
 
 
@@ -28,7 +29,13 @@ class registro_usuario : AppCompatActivity() {
         val txtUsuarioRegistrarse = findViewById<EditText>(R.id.txtUsuarioRegistro)
         val txtContrasenaRegistrarse = findViewById<EditText>(R.id.txtContrasenaRegistro)
         val btnRegistrarse = findViewById<ImageView>(R.id.btnCrearCuenta)
+        val btncerrar = findViewById<ImageView>(R.id.btnSalirRegistroUsuario)
 
+        btncerrar.setOnClickListener {
+            val login = Intent(this, login::class.java)
+            startActivity(login)
+            finish()
+        }
         btnRegistrarse.setOnClickListener {
             val usuario = txtUsuarioRegistrarse.text.toString()
             val contrasena = txtContrasenaRegistrarse.text.toString()

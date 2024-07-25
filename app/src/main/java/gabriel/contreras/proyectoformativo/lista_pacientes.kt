@@ -32,6 +32,10 @@ class lista_pacientes : AppCompatActivity() {
 
         val btnAgregarPaciente = findViewById<ImageButton>(R.id.btnAgregarPaciente)
 
+        val btncerrar = findViewById<ImageView>(R.id.btnCerrarSesion)
+
+
+
         rcvPaciente.layoutManager = LinearLayoutManager(this)
 
         fun obtenerPacientes(): List<Paciente> {
@@ -76,6 +80,11 @@ class lista_pacientes : AppCompatActivity() {
             }
         }
 
+        btncerrar.setOnClickListener {
+            val pantallaLogin = Intent(this, login::class.java)
+            startActivity(pantallaLogin)
+            finish()
+        }
 
         btnAgregarPaciente.setOnClickListener {
             //Cambio de pantalla para poder registrarse

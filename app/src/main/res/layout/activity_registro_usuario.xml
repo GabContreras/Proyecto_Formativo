@@ -51,16 +51,6 @@
         app:layout_constraintVertical_bias="0.708" />
 
     <TextView
-        android:id="@+id/btnRegistrarse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="¿No tienes una cuenta? ¡Crea una!"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.995"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -118,6 +108,18 @@
         app:layout_constraintTop_toTopOf="@+id/imgLineas2"
         app:layout_constraintVertical_bias="0.868"
         app:srcCompat="@drawable/registrar" />
+
+    <ImageView
+        android:id="@+id/btnSalirRegistroUsuario"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCrearCuenta"
+        app:layout_constraintVertical_bias="0.589"
+        app:srcCompat="@drawable/baseline_arrow_back_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

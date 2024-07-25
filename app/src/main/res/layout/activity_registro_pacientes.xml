@@ -7,144 +7,252 @@
     android:layout_height="match_parent"
     tools:context=".registro_pacientes">
 
-    <ImageView
-        android:id="@+id/imgLineas2"
-        android:layout_width="560dp"
-        android:layout_height="220dp"
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registro de pacientes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/login_design" />
+        app:layout_constraintVertical_bias="0.073" />
 
-    <EditText
-        android:id="@+id/txtCorreoSolicitante"
-        android:layout_width="298dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/txt_registro"
-        android:ems="10"
-        android:hint="Apellido"
-        android:inputType="text"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNombreSolicitante" />
-
-    <Spinner
-        android:id="@+id/spHabitacionPaciente"
-        android:layout_width="225dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.301"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21" />
-
-    <EditText
-        android:id="@+id/txtNombreSolicitante"
-        android:layout_width="298dp"
-        android:layout_height="48dp"
-        android:background="@drawable/txt_registro"
-        android:ems="10"
-        android:hint="Nombre"
-        android:inputType="text"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgLineas2" />
-
-    <EditText
-        android:id="@+id/txtHabilidadesLaborales"
-        android:layout_width="290dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/txt_registro"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Realiza una descripción de la enfermedad que presenta el/la paciente"
-        android:inputType="textMultiLine"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTelefonoSolicitante" />
-
-    <EditText
-        android:id="@+id/txtNumerodeCama"
-        android:layout_width="298dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/txt_registro"
-        android:ems="10"
-        android:focusable="false"
-        android:hint="Número de cama"
-        android:inputType="none"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtFechaPaciente" />
-
-    <EditText
-        android:id="@+id/txtFechaPaciente"
-        android:layout_width="298dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/txt_registro"
-        android:ems="10"
-        android:hint="Fecha de ingreso"
-        android:inputType="text"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtHabilidadesLaborales" />
-
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Numero de habitación"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.219"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNumerodeCama" />
-
-    <EditText
-        android:id="@+id/txtTelefonoSolicitante"
-        android:layout_width="298dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/txt_registro"
-        android:ems="10"
-        android:hint="Edad"
-        android:inputType="text"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCorreoSolicitante" />
-
-    <ImageButton
-        android:id="@+id/btnCrearCuentaSolicitante"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#FFFEFE"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="328dp"
+        android:layout_height="75dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgLineas2"
-        app:layout_constraintVertical_bias="0.979"
-        app:srcCompat="@drawable/registrar_paciente" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.979">
+
+        <ImageButton
+            android:id="@+id/btnRegistrarPacienteIngreso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFEFE"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.466"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/registrar_paciente" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="342dp"
+        android:layout_height="681dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/txtFechaDeIngresoPacienteIngreso"
+                android:layout_width="298dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="23dp"
+                android:background="@drawable/txt_registro"
+                android:ems="10"
+                android:focusable="false"
+                android:hint="Fecha de ingreso"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtEnfermedadPacienteIngreso" />
+
+            <EditText
+                android:id="@+id/txtNombrePacienteIngreso"
+                android:layout_width="298dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/txt_registro"
+                android:ems="10"
+                android:hint="Nombre"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/txtApellidoPacienteIngreso"
+                android:layout_width="298dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/txt_registro"
+                android:ems="10"
+                android:hint="Apellido"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.59"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNombrePacienteIngreso" />
+
+            <EditText
+                android:id="@+id/txtEnfermedadPacienteIngreso"
+                android:layout_width="298dp"
+                android:layout_height="78dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="23dp"
+                android:background="@drawable/txt_registro"
+                android:ems="10"
+                android:hint="Enfermedad"
+                android:inputType="textMultiLine"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtEdadPacienteIngreso" />
+
+            <EditText
+                android:id="@+id/txtNumeroDeCamaIngreso"
+                android:layout_width="298dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/txt_registro"
+                android:ems="10"
+                android:hint="Número de cama"
+                android:inputType="number"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spHabitacionPaciente" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="261dp"
+                android:text="Medicamento a asignar"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.073"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNumeroDeCamaIngreso" />
+
+            <Spinner
+                android:id="@+id/spMedicamento"
+                android:layout_width="225dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="33dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="84dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="33dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="219dp"
+                android:text="Habitación a asignar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.128"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtFechaDeIngresoPacienteIngreso" />
+
+            <Spinner
+                android:id="@+id/spHabitacionPaciente"
+                android:layout_width="225dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="33dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="84dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+            <EditText
+                android:id="@+id/txtEdadPacienteIngreso"
+                android:layout_width="298dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/txt_registro"
+                android:ems="10"
+                android:hint="Edad"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.508"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtApellidoPacienteIngreso" />
+
+            <EditText
+                android:id="@+id/txtHoraDeAPlicacionIngreso"
+                android:layout_width="290dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="28dp"
+                android:background="@drawable/txt_registro"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Hora de aplicación"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spMedicamento" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="105dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/btnSalirRegistro"
+        android:layout_width="51dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView15"
+        app:layout_constraintEnd_toStartOf="@+id/imageView5"
+        app:layout_constraintHorizontal_bias="0.213"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/baseline_arrow_back_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>
